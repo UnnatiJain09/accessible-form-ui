@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="An accessible and responsive registration form built with HTML, CSS and JavaScript."
+    >
+
+    <title>Join Us | Accessible Form UI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- =================================
+             TOP BAR
+        ================================== -->
+
+        <header class="topbar">
+
+            <a href="#" class="logo" aria-label="Formly home">
+
+                <span class="logo-mark">F</span>
+
+                <span>
+                    form<span>ly</span>
+                </span>
+
+            </a>
+
+
+            <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                title="Switch theme"
+            >
+                ☾
+            </button>
+
+        </header>
+
+
+        <!-- =================================
+             MAIN CONTENT
+        ================================== -->
+
+        <section class="form-layout">
+
+            <!-- =================================
+                 LEFT INFORMATION PANEL
+            ================================== -->
+
+            <div class="intro-panel">
+
+                <p class="eyebrow">
+                    ✦ CREATE YOUR ACCOUNT
+                </p>
+
+                <h1>
+                    Start something
+                    <span>meaningful.</span>
+                </h1>
+
+                <p class="intro-text">
+                    Join a community of creative people,
+                    developers and builders who are turning
+                    ideas into reality.
+                </p>
+
+
+                <!-- Benefits -->
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <span class="benefit-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Simple & secure
+                            </strong>
+
+                            <p>
+                                Your information stays private.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <span class="benefit-icon">
+                            ✦
+                        </span>
+
+                        <div>
+                            <strong>
+                                Built for everyone
+                            </strong>
+
+                            <p>
+                                Accessible on every device.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <span class="benefit-icon">
+                            →
+                        </span>
+
+                        <div>
+                            <strong>
+                                Ready to explore
+                            </strong>
+
+                            <p>
+                                Start building your journey today.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Decorative quote -->
+
+                <div class="quote">
+
+                    <span>“</span>
+
+                    <p>
+                        Great things often begin
+                        with a simple first step.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 FORM PANEL
+            ================================== -->
+
+            <div class="form-panel">
+
+                <div class="form-header">
+
+                    <p class="form-label">
+                        YOUR DETAILS
+                    </p>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Fields marked with
+                        <span aria-hidden="true">*</span>
+                        are required.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     FORM
+                ================================== -->
+
+                <form
+                    id="signup-form"
+                    novalidate
+                >
+
+                    <!-- Full Name -->
+
+                    <div class="field">
+
+                        <label for="full-name">
+                            Full Name
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="fullName"
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                            aria-describedby="name-error"
+                            required
+                        >
+
+                        <p
+                            id="name-error"
+                            class="error-message"
+                            role="alert"
+                        ></p>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email Address
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            aria-describedby="email-error"
+                            required
+                        >
+
+                        <p
+                            id="email-error"
+                            class="error-message"
+                            role="alert"
+                        ></p>
+
+                    </div>
+
+
+                    <!-- Phone + Role -->
+
+                    <div class="field-row">
+
+                        <div class="field">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                autocomplete="tel"
+                                placeholder="+91 98765 43210"
+                                aria-describedby="phone-error"
+                            >
+
+                            <p
+                                id="phone-error"
+                                class="error-message"
+                                role="alert"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="role">
+                                Your Role
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <select
+                                id="role"
+                                name="role"
+                                aria-describedby="role-error"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your role
+                                </option>
+
+                                <option value="student">
+                                    Student
+                                </option>
+
+                                <option value="developer">
+                                    Developer
+                                </option>
+
+                                <option value="designer">
+                                    Designer
+                                </option>
+
+                                <option value="founder">
+                                    Founder
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <p
+                                id="role-error"
+                                class="error-message"
+                                role="alert"
+                            ></p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="field">
+
+                        <label for="password">
+                            Create Password
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                autocomplete="new-password"
+                                placeholder="Create a strong password"
+                                aria-describedby="password-help password-error"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="password-toggle"
+                                class="password-toggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="password-strength"
+                            aria-live="polite"
+                        >
+
+                            <div class="strength-bar">
+                                <span id="strength-progress"></span>
+                            </div>
+
+                            <span id="strength-text">
+                                Enter a password
+                            </span>
+
+                        </div>
+
+
+                        <p
+                            id="password-help"
+                            class="field-help"
+                        >
+                            Use at least 8 characters with
+                            letters and numbers.
+                        </p>
+
+                        <p
+                            id="password-error"
+                            class="error-message"
+                            role="alert"
+                        ></p>
+
+                    </div>
+
+
+                    <!-- About -->
+
+                    <div class="field">
+
+                        <label for="about">
+                            Tell us about yourself
+                        </label>
+
+                        <textarea
+                            id="about"
+                            name="about"
+                            rows="4"
+                            maxlength="300"
+                            placeholder="What are you currently building or learning?"
+                            aria-describedby="about-count"
+                        ></textarea>
+
+                        <div
+                            id="about-count"
+                            class="character-count"
+                        >
+                            0 / 300
+                        </div>
+
+                    </div>
+
+
+                    <!-- Terms -->
+
+                    <div class="terms-field">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            aria-describedby="terms-error"
+                            required
+                        >
+
+                        <label for="terms">
+                            I agree to the
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+                            and
+                            <a href="#">
+                                Privacy Policy
+                            </a>.
+                        </label>
+
+                    </div>
+
+                    <p
+                        id="terms-error"
+                        class="error-message"
+                        role="alert"
+                    ></p>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Create Account
+                        <span>→</span>
+                    </button>
+
+
+                    <!-- Success Message -->
+
+                    <div
+                        id="success-message"
+                        class="success-message"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    >
+                        <span>✓</span>
+
+                        <div>
+                            <strong>
+                                Account created successfully!
+                            </strong>
+
+                            <p>
+                                Welcome to the community.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer>
+
+            <p>
+                Accessible by design.
+            </p>
+
+            <span>
+                © 2026 Formly
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

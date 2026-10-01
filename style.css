@@ -1,0 +1,1507 @@
+/* ======================================
+   RESET & GLOBAL
+====================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 185, 140, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(145, 190, 255, 0.22),
+            transparent 30%
+        ),
+        #f4f1eb;
+
+    color: #202020;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ======================================
+   MAIN PAGE
+====================================== */
+
+.page {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 28px 0;
+}
+
+.logo {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+}
+
+.logo > span:last-child > span {
+    opacity: 0.45;
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: #202020;
+    color: white;
+
+    font-family: Georgia, serif;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.logo:hover .logo-mark {
+    transform:
+        rotate(-8deg)
+        scale(1.08);
+}
+
+
+/* ======================================
+   THEME BUTTON
+====================================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: #202020;
+
+    font-size: 19px;
+
+    display: grid;
+    place-items: center;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform:
+        rotate(15deg)
+        scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ======================================
+   FORM LAYOUT
+====================================== */
+
+.form-layout {
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    min-height: 720px;
+
+    padding:
+        45px 0 80px;
+}
+
+
+/* ======================================
+   INTRO PANEL
+====================================== */
+
+.intro-panel {
+    position: relative;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    opacity: 0.55;
+}
+
+.intro-panel h1 {
+    max-width: 500px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(48px, 6vw, 76px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+.intro-panel h1 span {
+    display: block;
+
+    font-style: italic;
+
+    opacity: 0.45;
+}
+
+.intro-text {
+    max-width: 470px;
+
+    margin-top: 28px;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    opacity: 0.62;
+}
+
+
+/* ======================================
+   BENEFITS
+====================================== */
+
+.benefits {
+    display: grid;
+
+    gap: 18px;
+
+    margin-top: 42px;
+}
+
+.benefit {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.benefit-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    font-size: 13px;
+}
+
+.benefit strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+}
+
+.benefit p {
+    font-size: 12px;
+
+    opacity: 0.5;
+}
+
+
+/* ======================================
+   QUOTE
+====================================== */
+
+.quote {
+    position: relative;
+
+    max-width: 400px;
+
+    margin-top: 55px;
+
+    padding: 24px 25px;
+
+    border-left: 2px solid rgba(0, 0, 0, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 0 18px 18px 0;
+
+    animation:
+        quoteFloat 5s ease-in-out infinite;
+}
+
+.quote > span {
+    position: absolute;
+
+    top: -10px;
+    left: 16px;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    opacity: 0.18;
+}
+
+.quote p {
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    opacity: 0.65;
+}
+
+@keyframes quoteFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* ======================================
+   FORM PANEL
+====================================== */
+
+.form-panel {
+    position: relative;
+
+    padding: 42px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 30px 80px rgba(45, 38, 28, 0.12);
+
+    animation:
+        formReveal 0.8s ease both;
+}
+
+@keyframes formReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   FORM DECORATION
+====================================== */
+
+.form-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -70px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 180, 130, 0.25),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ======================================
+   FORM HEADER
+====================================== */
+
+.form-label {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.45;
+}
+
+.form-header h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 31px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+}
+
+.form-header > p:last-child {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    opacity: 0.5;
+}
+
+
+/* ======================================
+   FORM
+====================================== */
+
+#signup-form {
+    margin-top: 30px;
+
+    display: grid;
+
+    gap: 19px;
+}
+
+
+/* ======================================
+   FIELD
+====================================== */
+
+.field {
+    position: relative;
+}
+
+.field-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+.field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.field label > span,
+.form-header span {
+    color: #b44d38;
+}
+
+
+/* ======================================
+   INPUTS
+====================================== */
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    color: #202020;
+
+    outline: none;
+
+    transition:
+        border 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.field input,
+.field select {
+    height: 48px;
+
+    padding:
+        0 14px;
+}
+
+.field textarea {
+    min-height: 105px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #202020;
+
+    opacity: 0.32;
+}
+
+
+/* ======================================
+   INPUT FOCUS
+====================================== */
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: rgba(45, 85, 150, 0.55);
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+        0 0 0 4px rgba(100, 145, 210, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+/* ======================================
+   PASSWORD
+====================================== */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 11px;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.password-toggle:hover {
+    opacity: 0.6;
+}
+
+
+/* ======================================
+   PASSWORD STRENGTH
+====================================== */
+
+.password-strength {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+.strength-bar {
+    flex: 1;
+
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        rgba(0, 0, 0, 0.08);
+}
+
+#strength-progress {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: currentColor;
+
+    transition:
+        width 0.35s ease;
+}
+
+#strength-text {
+    min-width: 80px;
+
+    font-size: 10px;
+
+    opacity: 0.55;
+}
+
+.field-help {
+    margin-top: 6px;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    opacity: 0.42;
+}
+
+
+/* ======================================
+   CHARACTER COUNT
+====================================== */
+
+.character-count {
+    margin-top: 6px;
+
+    text-align: right;
+
+    font-size: 10px;
+
+    opacity: 0.4;
+}
+
+
+/* ======================================
+   ERROR MESSAGE
+====================================== */
+
+.error-message {
+    min-height: 16px;
+
+    margin-top: 5px;
+
+    color: #b33d2d;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+    border-color: rgba(180, 61, 45, 0.55);
+
+    background:
+        rgba(255, 240, 236, 0.7);
+}
+
+.field.has-success input,
+.field.has-success select,
+.field.has-success textarea {
+    border-color: rgba(47, 130, 83, 0.45);
+}
+
+
+/* ======================================
+   TERMS
+====================================== */
+
+.terms-field {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-top: 2px;
+}
+
+.terms-field input {
+    width: 16px;
+    height: 16px;
+
+    margin-top: 1px;
+
+    accent-color: #202020;
+
+    flex-shrink: 0;
+}
+
+.terms-field label {
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    opacity: 0.58;
+}
+
+.terms-field a {
+    font-weight: 700;
+
+    opacity: 0.9;
+}
+
+
+/* ======================================
+   SUBMIT BUTTON
+====================================== */
+
+.submit-btn {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #202020;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.submit-btn span {
+    margin-left: 8px;
+
+    display: inline-block;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.submit-btn:hover span {
+    transform: translateX(5px);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ======================================
+   BUTTON SHINE
+====================================== */
+
+.submit-btn::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.18),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+}
+
+.submit-btn:hover::after {
+    left: 140%;
+}
+
+
+/* ======================================
+   SUCCESS MESSAGE
+====================================== */
+
+.success-message {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(65, 150, 100, 0.1);
+
+    border: 1px solid
+        rgba(65, 150, 100, 0.2);
+
+    color: #287347;
+
+    animation:
+        successReveal 0.4s ease both;
+}
+
+.success-message > span {
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(65, 150, 100, 0.15);
+
+    font-size: 12px;
+}
+
+.success-message strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.success-message p {
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    opacity: 0.75;
+}
+
+@keyframes successReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        25px 0 35px;
+
+    border-top:
+        1px solid rgba(0, 0, 0, 0.07);
+
+    font-size: 10px;
+
+    opacity: 0.5;
+}
+
+footer span {
+    transition:
+        letter-spacing 0.3s ease;
+}
+
+footer span:hover {
+    letter-spacing: 2px;
+}
+
+
+/* ======================================
+   FOCUS ACCESSIBILITY
+====================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline:
+        3px solid currentColor;
+
+    outline-offset:
+        3px;
+}
+
+
+/* ======================================
+   DARK MODE
+====================================== */
+
+.dark-mode {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(120, 90, 70, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(70, 100, 140, 0.18),
+            transparent 30%
+        ),
+        #151515;
+
+    color: #eeeeee;
+}
+
+.dark-mode .logo-mark {
+    background: #eeeeee;
+    color: #151515;
+}
+
+.dark-mode .theme-toggle {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    color: #eeeeee;
+}
+
+.dark-mode .benefit-icon {
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+.dark-mode .quote {
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border-left-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+.dark-mode .form-panel {
+    background:
+        rgba(35, 35, 35, 0.78);
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .field input,
+.dark-mode .field select,
+.dark-mode .field textarea {
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border-color:
+        rgba(255, 255, 255, 0.1);
+
+    color: #eeeeee;
+}
+
+.dark-mode .field input::placeholder,
+.dark-mode .field textarea::placeholder {
+    color: white;
+
+    opacity: 0.3;
+}
+
+.dark-mode .field input:focus,
+.dark-mode .field select:focus,
+.dark-mode .field textarea:focus {
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .password-toggle {
+    color: #eeeeee;
+}
+
+.dark-mode .strength-bar {
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .terms-field input {
+    accent-color: white;
+}
+
+.dark-mode .submit-btn {
+    background: #eeeeee;
+    color: #151515;
+}
+
+.dark-mode footer {
+    border-top-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 900px) {
+
+    .form-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-top: 25px;
+    }
+
+    .intro-panel {
+        max-width: 650px;
+    }
+
+    .intro-panel h1 {
+        font-size: 60px;
+    }
+
+    .quote {
+        margin-top: 35px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .page {
+        width: 90%;
+    }
+
+    .topbar {
+        padding: 20px 0;
+    }
+
+    .form-layout {
+        padding:
+            25px 0 55px;
+    }
+
+    .intro-panel h1 {
+        font-size: 46px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+    }
+
+    .benefits {
+        margin-top: 30px;
+    }
+
+    .form-panel {
+        padding: 26px 20px;
+
+        border-radius: 22px;
+    }
+
+    .form-header h2 {
+        font-size: 26px;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quote {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+}
+
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+/* ======================================
+   FINAL ACCESSIBILITY POLISH
+====================================== */
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible,
+.password-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.submit-btn:focus-visible,
+.terms-field input:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid #6d8fc7;
+    outline-offset: 3px;
+}
+
+
+/* ======================================
+   VALIDATION ICON FEEDBACK
+====================================== */
+
+.field.has-success::after {
+    content: "✓";
+
+    position: absolute;
+
+    right: 13px;
+    top: 35px;
+
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(47, 130, 83, 0.12);
+
+    color: #2f8253;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    pointer-events: none;
+
+    animation: validationPop 0.25s ease both;
+}
+
+
+/* Don't show the icon on select fields */
+
+.field.has-success select {
+    padding-right: 35px;
+}
+
+
+@keyframes validationPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ======================================
+   ERROR SHAKE
+====================================== */
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+    animation: errorShake 0.3s ease;
+}
+
+@keyframes errorShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+
+/* ======================================
+   TERMS ERROR
+====================================== */
+
+.terms-field:has(
+    input[aria-invalid="true"]
+) {
+    padding: 9px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(180, 61, 45, 0.06);
+}
+
+
+/* ======================================
+   PASSWORD STRENGTH STATES
+====================================== */
+
+.password-strength:has(
+    #strength-text
+) {
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* ======================================
+   FORM PANEL HOVER
+====================================== */
+
+.form-panel {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.form-panel:hover {
+    box-shadow:
+        0 35px 90px rgba(45, 38, 28, 0.15);
+}
+
+
+/* ======================================
+   BENEFIT HOVER
+====================================== */
+
+.benefit {
+    transition:
+        transform 0.3s ease;
+}
+
+.benefit:hover {
+    transform:
+        translateX(5px);
+}
+
+.benefit:hover .benefit-icon {
+    transform:
+        scale(1.08)
+        rotate(-4deg);
+}
+
+.benefit-icon {
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ======================================
+   INPUT LABEL INTERACTION
+====================================== */
+
+.field label {
+    transition:
+        color 0.25s ease;
+}
+
+.field:focus-within label {
+    color: #526f9f;
+}
+
+
+/* ======================================
+   PASSWORD BUTTON
+====================================== */
+
+.password-toggle {
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.password-toggle:hover {
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+.password-toggle:active {
+    transform:
+        translateY(-50%)
+        scale(0.95);
+}
+
+
+/* ======================================
+   SUCCESS MESSAGE
+====================================== */
+
+.success-message[hidden] {
+    display: none;
+}
+
+.success-message:not([hidden]) {
+    margin-top: 3px;
+}
+
+
+/* ======================================
+   DARK MODE POLISH
+====================================== */
+
+.dark-mode .field:focus-within label {
+    color: #9db8e8;
+}
+
+.dark-mode .field.has-success::after {
+    background:
+        rgba(80, 190, 120, 0.14);
+
+    color: #70d597;
+}
+
+.dark-mode .field.has-error input,
+.dark-mode .field.has-error select,
+.dark-mode .field.has-error textarea {
+    background:
+        rgba(180, 61, 45, 0.08);
+}
+
+.dark-mode .benefit-icon {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dark-mode .form-panel:hover {
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.42);
+}
+
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 900px) {
+
+    .form-layout {
+        min-height: auto;
+    }
+
+    .form-panel {
+        max-width: 720px;
+    }
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .form-panel:hover {
+        transform: none;
+    }
+
+    .benefit:hover {
+        transform: none;
+    }
+
+    .field.has-success::after {
+        right: 12px;
+    }
+
+    .submit-btn {
+        min-height: 55px;
+    }
+
+    .field input,
+    .field select {
+        height: 50px;
+    }
+
+    .field textarea {
+        min-height: 120px;
+    }
+}
+
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .field.has-error input,
+    .field.has-error select,
+    .field.has-error textarea {
+        animation: none;
+    }
+
+    .field.has-success::after {
+        animation: none;
+    }
+}
