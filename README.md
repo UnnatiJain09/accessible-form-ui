@@ -10,7 +10,8 @@ This project demonstrates how to create an attractive form interface while maint
 
 ## 📸 Preview
 
-Add a screenshot of the project here.
+<img width="881" height="474" alt="Screenshot 2026-10-01 121637" src="https://github.com/user-attachments/assets/c50aa6d4-8181-469b-ac9c-1bfaffc41691" />
+
 
 ## ✨ Features
 
